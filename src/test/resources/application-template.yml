@@ -1,0 +1,4 @@
+yandex:
+  disk:
+    base-url: https://cloud-api.yandex.net/v1/disk
+    token: OAuth YOUR_TOKEN_HERE

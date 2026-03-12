@@ -2,18 +2,11 @@ package yadisk.tests;
 
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import yadisk.client.YandexDiskClient;
 import yadisk.utils.RandomUtils;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest(classes = yadisk.YandexDiskApplication.class)
-public class CreateFolderTest {
-
-    @Autowired
-    private YandexDiskClient client;
+public class CreateFolderTest extends YandexDiskTest {
 
     @Test
     void createFolderWithFullCheck() {

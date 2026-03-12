@@ -1,0 +1,8 @@
+integration:
+  yandex:
+    disk:
+      base-url: https://cloud-api.yandex.net/v1/disk
+      token: ${YANDEX_DISK_INTEGRATION_TOKEN:}
+spring:
+  config:
+    import: file:.env[.properties]

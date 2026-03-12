@@ -2,19 +2,12 @@ package yadisk.tests;
 
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import yadisk.client.YandexDiskClient;
 import yadisk.utils.RandomUtils;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest(classes = yadisk.YandexDiskApplication.class)
-public class CreateFolderNegativeTest {
-
-    @Autowired
-    private YandexDiskClient client;
+public class CreateFolderNegativeTest extends YandexDiskTest {
 
     @Test
     void cannotCreateFolderThatAlreadyExists() {

@@ -1,6 +1,8 @@
 package yadisk.tests;
 
 import io.restassured.response.Response;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import yadisk.utils.RandomUtils;
 
@@ -10,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class CreateFolderNegativeTest extends YandexDiskTest {
 
     @Test
+    @DisplayName("Не должен создать папку увидив конфликт")
     void cannotCreateFolderThatAlreadyExists() {
         String folderName = RandomUtils.randomFolderName();
 
@@ -20,6 +23,7 @@ public class CreateFolderNegativeTest extends YandexDiskTest {
     }
 
     @Test
+    @DisplayName("Не должен создать папку с пустым именем")
     void cannotCreateFolderWithEmptyName() {
         Response resp = client.createFolder("");
         int status = resp.statusCode();
@@ -27,6 +31,7 @@ public class CreateFolderNegativeTest extends YandexDiskTest {
     }
 
     @Test
+    @DisplayName("Не должен создать папку с некорректным именем")
     void cannotCreateFolderWithInvalidCharacters() {
         String badName = "////";
         Response resp = client.createFolder(badName);

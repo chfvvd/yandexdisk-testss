@@ -1,6 +1,7 @@
 package yadisk.tests;
 
 import io.restassured.response.Response;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import yadisk.utils.RandomUtils;
 
@@ -9,7 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class DeleteFolderTest extends YandexDiskTest {
 
     @Test
-    void deleteFolderWithCheck() {
+    @DisplayName("Должен удалить папку с полной проверкой")
+    void shouldDeleteFolderWithCheck() {
         String folderName = RandomUtils.randomFolderName();
 
         client.createFolder(folderName);
